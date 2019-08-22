@@ -1,0 +1,14 @@
+global:
+  #Bypass tls Microsoft e outros 
+  smtp_require_tls: false
+route:
+    repeat_interval: 30m
+    group_interval: 30m
+    receiver: 'email_config'
+    
+receivers:
+  - name: email_config
+    email_configs:
+    - to: 'example@example.com'
+      from: 'example@example.com'
+      smarthost: 'example.com:25
